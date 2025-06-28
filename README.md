@@ -10,7 +10,7 @@
 
 ### Шаги
 
-1. Склонировать проект 'git clone https://github.com/имя_пользователя/final_proj.git'
+1. Склонировать проект 'git clone https://github.com/Roman186/final_proj.git'
 2. Установить необходимые зависимости: **pip install selenium pytest requests allure-pytest**
 3. Перейдите в рабочую директорию: **cd <название директории>**
 4. Запустите тесты с генерацией данных для отчета: **pytest --alluredir allure-result**
