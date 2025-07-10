@@ -61,8 +61,8 @@ def test_russian_letters(driver):
 
 @pytest.mark.UI
 @pytest.mark.Positive
-@allure.title("UI. Поиск товара буквами")
-@allure.description("Проверка наличия букв названии товара")
+@allure.title("UI. Поиск товара цифрами")
+@allure.description("Проверка наличия цифр названии товара")
 @allure.feature("Интернет-магазин")
 @allure.severity(allure.severity_level.NORMAL)
 def test_digit_letter(driver):
@@ -70,7 +70,7 @@ def test_digit_letter(driver):
     is_digit = main_page.digit_letter()
 
     assert is_digit is True, \
-        "В названии товара нет букв"
+        "В названии товара нет цифр"
 
 
 @pytest.mark.UI

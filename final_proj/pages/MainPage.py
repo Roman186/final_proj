@@ -1,7 +1,7 @@
 from selenium.webdriver import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import re
 
 
@@ -64,14 +64,19 @@ class Main:
         Получение названия первого товара в результатах
         :return: str
         """
-        elements = self.search_product("")
+        try:
+            elements = WebDriverWait(self.driver, 15).until(
+                EC.visibility_of_all_elements_located(self.items_locator)
+            )
+            if not elements:
+                return ""
 
-        if elements:
             return elements[0].find_element(
                 "xpath",
                 "//a[@class='product-card__title']"
             ).text
-        return ""
+        except (TimeoutException, NoSuchElementException):
+            return ""
 
     def get_first_product_id(self) -> str:
         """
