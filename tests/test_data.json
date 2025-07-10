@@ -1,0 +1,16 @@
+{
+  "my_headers": {
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjIyMjA0MDA2LCJpYXQiOjE3NTIxNTc4NTYsImV4cCI6MTc1MjE2MTQ1NiwidHlwZSI6MjB9.CGzE1bOIjq3DApna-vBpqY06xsbORVXLKtb3W2B_1Sw",
+    "Content-Type": "application/json",
+    "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36"
+  },
+  "params": {
+    "customerCityId": "213",
+    "sortPreset": "relevance",
+    "products5Bper-page5D": 1,
+    "phrase": "programming"
+  },
+  "data": {
+    "Phrase": "Python"
+  }
+}
