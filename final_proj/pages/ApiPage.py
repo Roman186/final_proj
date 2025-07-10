@@ -62,7 +62,7 @@ class ApiPage:
         Поиск товара с ошибкой в названии
         """
 
-        original_params = DataProvider().get_params()
+        original_params = self.params
 
         new_params = copy.deepcopy(original_params)
         new_params["phrase"] = "корандаш"
@@ -77,7 +77,7 @@ class ApiPage:
         :return: tuple
         """
 
-        original_params = DataProvider().get_params()
+        original_params = self.params
 
         new_params = copy.deepcopy(original_params)
         new_params["phrase"] = f"{id_product}"

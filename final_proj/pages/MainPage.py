@@ -47,7 +47,7 @@ class Main:
 
         search_field.send_keys(query)
 
-        submit_button = WebDriverWait(self.driver, 7).until(
+        submit_button = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.submit_button_locator)
         )
         submit_button.click()
@@ -78,25 +78,29 @@ class Main:
         Получение ID первого товара в результатах
         :return: str
         """
-        elements = self.search_product("")
-        link = elements[0].find_element(
-            "xpath",
-            "//article[@class='product-card app-products-list__item'][1]//a"
-        )
-        self.driver.execute_script("arguments[0].click();", link)
+        try:
+            elements = WebDriverWait(self.driver, 15).until(
+                EC.visibility_of_all_elements_located(self.items_locator)
+            )
+            if not elements:
+                return ""
 
-        locator_product = (
-            "xpath",
-            "//li[contains(., 'ID товара')]//span[2]/span"
-        )
-        element = WebDriverWait(self.driver, 15).until(
-            EC.visibility_of_element_located(locator_product))
+            link = elements[0].find_element(
+                "xpath",
+                "//article[@class='product-card app-products-list__item'][1]//a"
+            )
+            self.driver.execute_script("arguments[0].click();", link)
 
-        id_product = element.text
+            locator_product = (
+                "xpath",
+                "//li[contains(., 'ID товара')]//span[2]/span"
+            )
+            element = WebDriverWait(self.driver, 15).until(
+                EC.visibility_of_element_located(locator_product))
 
-        if elements:
-            return id_product
-        return ""
+            return element.text
+        except TimeoutException:
+            return ""
 
     def latin_letters(self) -> bool:
         """

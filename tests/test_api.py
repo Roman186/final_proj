@@ -201,6 +201,6 @@ def test_126_symbols():
 def test_search_post_method():
     api_page = ApiPage()
     result = api_page.search_post_method()
-    status_code = result.status_code == 405
-    assert status_code, \
+    status_code = result.status_code
+    assert status_code == 405, \
         f"Ожидаемый статус-код: 405, в итоге: {status_code}"
