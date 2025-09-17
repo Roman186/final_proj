@@ -1,6 +1,7 @@
 {
   "my_headers": {
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjIyMjA0MDA2LCJpYXQiOjE3NTIxNjgyODUsImV4cCI6MTc1MjE3MTg4NSwidHlwZSI6MjB9.e2lmRegcekGRXhVn_srngOq3WtHfgvCIbsmG6WxAlL0",
+    # Вставить свежий токен
+    "Authorization": "",
     "Content-Type": "application/json",
     "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36"
   },
